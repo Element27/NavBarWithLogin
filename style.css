@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    background-image: url(eeE3mq.jpg);
+    background-size: cover;
+    background-position: center;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+section{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.navBar .logo img{
+    width: 200px;
+}
+.navBar .hamburger{
+    display: none;
+}
+.navBar .hamburger img{
+    width: 25px;
+}
+
+.navBar .navlinks{
+    display: flex;
+}
+
+.navBar .navlinks li{
+    padding: 10px;
+    color: #fff;
+    list-style-type: none;
+    font-size: 24px;
+}
+
+
+/* form */
+form {
+    background-color: rgba(121, 146, 142, 0.2);
+    box-shadow: 0px 2px 5px 5px rgba(255, 255,  255, .3);
+}
+
+form small{
+color: #000;
+}
+
+.containIcon{
+    position: relative;
+}
+
+.containIcon img{
+    width: 20px;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+
+@media screen and (max-width:767px){
+   
+.navBar{
+    flex-wrap: wrap;
+}
+    .navBar .hamburger {
+        display: block;
+    }
+
+    .navBar .navlinks{
+        width: 100%;
+        text-align: right;
+        display:none;
+        flex-direction: column;
+    }
+
+     .navlinks.show{
+        display: flex;
+    }
+
+    .navBar .logo img{
+        width: 150px;
+    }
+
+    /* form */
+    form {
+        width: 90%;
+    }
+}
+
