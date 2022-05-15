@@ -66,6 +66,21 @@ color: #000;
     right: 10px;
 }
 
+.inputgroup{
+    position: relative;
+}
+
+.inputgroup input{
+    padding-left: 30px;
+}
+
+.input-icon img{
+    width: 20px;
+    position: absolute;
+    top:9px;
+    left: 10px;
+}
+
 @media screen and (max-width:767px){
    
 .navBar{
