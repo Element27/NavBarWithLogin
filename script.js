@@ -20,11 +20,11 @@ const confirmPassword = document.querySelector("#confirmPassword");
 const togglePassword = document.querySelector("#togglePassword");
 const toggleConfirmPassword = document.querySelector("#toggleConfirmPassword");
 
-// .has-warning, .has-error, or .has-success
 
 // addeventlistener to form
 
-form.addEventListener('submit', e => {
+form.addEventListener('click', e => {
+    // preventDefault() prevents the site from reloading each time the submit button is pressed
     e.preventDefault();
 
     checkInputs();
@@ -34,7 +34,7 @@ form.addEventListener('submit', e => {
 const checkInputs = () => {
     // trim elements to remove white space
     const usernameValue = userName.value.trim();
-    const emailValue = emailAddress.value.trim();
+    const emailAddressValue = emailAddress.value.trim();
     const passwordValue = password.value.trim();
     const confirmPasswordValue = confirmPassword.value.trim();
 
@@ -43,20 +43,6 @@ const checkInputs = () => {
         setErrorFor(userName);
     } else {
         setSuccessFor(userName);
-    }
-
-    // check if email value is valid 
-    if (emailValue === '') {
-        setErrorFor(emailAddress);
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(emailAddress);
-    } else {
-        setSuccessFor(emailAddress);
-    }
-
-    // check if email meets requirement
-    function isEmail(emailAddress) {
-        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailAddress);
     }
 
 
@@ -76,6 +62,7 @@ const checkInputs = () => {
         setSuccessFor(confirmPassword);
     }
 
+    
     // gender selection check
     if (gender.value == "gender") {
         setErrorFor(gender, '');
@@ -84,6 +71,8 @@ const checkInputs = () => {
     }
 
 }
+
+
 function setErrorFor(input) {
     const inputEl = input    
     inputEl.style.borderColor = "#dc3546"
@@ -123,5 +112,3 @@ toggleConfirmPassword.addEventListener("click", function () {
 
 
 });
-
-
